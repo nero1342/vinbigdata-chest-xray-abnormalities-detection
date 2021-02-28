@@ -1,0 +1,19 @@
+id: vitb16-sgd-focalloss
+pretrained: /content/drive/MyDrive/AI4VN/runs/baseline-2020_11_25-03_14_36/best_loss.pth
+seed: 42
+model:
+    name: BaselineClassifier
+    args:
+        nclasses: 9
+        extractor_cfg:
+            name: VisionTransformer
+            args:
+                pretrained: ViT-B_16-224.npz
+                version: ViT-B_16
+
+dataset:
+  csv: test.csv        
+  batch_size: 32
+  num_workers: 8
+
+threshold: 0.5
